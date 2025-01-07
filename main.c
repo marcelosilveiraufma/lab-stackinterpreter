@@ -2,6 +2,8 @@
 
 #include "interpret.h"
 
+#include "stack.c"
+
 static void repl()
 {
   char line[1024];
@@ -24,6 +26,17 @@ static void repl()
 
 int main () {
 
-    repl();
+    //repl();
+
+    Stack* s = new_stack(10);
+    stack_push(s, 10);
+    stack_push(s, 20);
+    stack_push(s, 30);
+    stack_print(s);
+    stack_pop(s);
+    stack_pop(s);
+    stack_print(s);
+
+
     return 0;
 }
